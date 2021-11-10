@@ -1,5 +1,9 @@
 ---
 
 - hosts: all
+
+  vars_files:
+    - vars/wordpress_vault.yml
+    
   roles:
     - common

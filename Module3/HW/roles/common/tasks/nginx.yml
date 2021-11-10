@@ -3,6 +3,7 @@
     name: epel-release
     state: present
   become: yes
+  tags: epelReleaseInstall
 
 - name: install nginx server
   yum:
@@ -10,6 +11,7 @@
     state: present
     update_cache: yes
   become: yes
+  tags: nginxInstall
 
 - name: restart nginx
   service:
@@ -18,3 +20,4 @@
     daemon_reload: yes
     enabled: yes
   become: yes
+  tags: nginxRestart
