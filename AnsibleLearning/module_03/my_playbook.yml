@@ -1,0 +1,11 @@
+---
+  - name: "My playbook"
+    hosts: locals
+    tasks:
+      - name: "Test reachability"
+        ansible.builtin.ping:
+      - name: "Install stress"
+        apt:
+          name: stress
+          state: present
+         

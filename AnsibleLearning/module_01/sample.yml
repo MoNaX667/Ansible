@@ -1,5 +1,5 @@
 ---
-  - name: sampleplaybook
+  - name: "Install apache localhost playbook"
     hosts: localhost
     become: yes
     become_user: root
