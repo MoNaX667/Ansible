@@ -5,3 +5,11 @@
         debug:
           msg: "Hello world"
         run_once: true
+      - name: Create directory
+        file:
+          path: "/tmp/ansible_test"
+          state: directory
+      - name: Save message
+        template:
+          src: template.txt
+          dest: "/tmp/ansible_test/test.txt"
