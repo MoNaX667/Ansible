@@ -2,7 +2,7 @@
   - name: "Playbook"
     hosts: locals
     tasks:
-      - name: "Ping the host"
+      - name: "Test reachability"
         ansible.builtin.ping:
       - name: "Create file's directory"
         file:
@@ -17,7 +17,7 @@
           dest: "/tmp/ansible/my_test_02.txt"
           content: "This is the second file content"
       - name: "Read file content"
-        debug: var=item
+        debug:
         with_file:
           - "/tmp/ansible/my_test_01.txt"
           - "/tmp/ansible/my_test_02.txt"
