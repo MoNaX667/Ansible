@@ -6,4 +6,4 @@
     - name: Reachable
       ping:
     - debug:
-        msg: "Get a message from my VM"
+        msg: "Get a message from {{ inventory_hostname }}"

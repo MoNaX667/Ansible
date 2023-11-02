@@ -1,0 +1,16 @@
+---
+  - name: Handlers
+    hosts: remote
+    tasks:
+    - name: "Test reachability"
+      ping:
+    - name: "Emulate nginx instalation"
+      debug:
+        msg: "Nginx was installed on the host {{ inventory_hostname }}"
+      notify: "nginx installed"
+      changed_when: true
+# Hanlers sections
+    handlers:
+    - name: "nginx installed"
+      debug:
+        msg: "Got a call from Emalating task"
