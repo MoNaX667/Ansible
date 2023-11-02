@@ -5,6 +5,7 @@
       - name: "Test reachability"
         ansible.builtin.ping:
       - name: "Install stress"
+        become: yes
         apt:
           name: stress
           state: present

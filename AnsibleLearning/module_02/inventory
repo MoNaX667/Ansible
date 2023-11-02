@@ -2,7 +2,7 @@
 localhost  ansible_connection=local
 
 [AzureHosts]
-137.117.150.14  ansible_connection=ssh
+<targetIpAddress>  ansible_connection=ssh
 
 [Abstract]
 extraHost.global.com
