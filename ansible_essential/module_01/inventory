@@ -1,0 +1,5 @@
+[all]
+server1 ansible_connection=local
+
+[all:vars]
+server_message="Message from inventory"

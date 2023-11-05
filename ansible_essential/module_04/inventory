@@ -1,0 +1,7 @@
+[local]
+my_server ansible_connection=local inline_var="There is an inline message"
+
+[local:vars]
+group_var="There is a group var message"
+file_path="/tmp/my_test_file.txt"
+file_state=absent

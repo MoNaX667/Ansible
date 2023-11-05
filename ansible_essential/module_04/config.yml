@@ -1,0 +1,17 @@
+---
+  - hosts: local
+  
+    tasks:
+      - name: "Output message"
+        debug:
+          msg: "Message from debug "
+      - name: "Output inline variable value"
+        debug:
+          msg: "{{ inline_var }}"
+      - name:
+        debug:
+          msg: "{{ group_var }}"
+      - name:
+        file:
+          dest: "{{ file_path }}"
+          state: "{{ file_state }}"

@@ -1,0 +1,14 @@
+---
+- hosts: all:var
+  vars:
+    message: "Var's message from playbook"
+
+  tasks:
+    - name: "Test availability"
+      ping:
+    - name: "Debug message from playbook"
+      debug:
+        msg: "{{ message }}"
+    - name:
+      debug:
+        msg: "{{ server_message }}"
