@@ -1,0 +1,2 @@
+[remote]
+my_controlled_server ansible_host=137.117.150.14 ansible_connection=ssh
