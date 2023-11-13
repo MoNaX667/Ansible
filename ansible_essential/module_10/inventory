@@ -1,0 +1,5 @@
+[local_server]
+local_worker ansible_connection=local
+
+[remote]
+remote_worker ansible_connection=ssh ansible_host=137.117.150.14

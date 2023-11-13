@@ -1,0 +1,8 @@
+---
+# tasks file for vibely_role
+- name: Test availability
+  ping:
+
+- name: Test variable
+  debug:
+    var: my_defaults_var

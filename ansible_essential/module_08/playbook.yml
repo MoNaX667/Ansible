@@ -10,7 +10,6 @@
           name: "{{ item }}"
           state: latest
         with_items: "{{ packages }}"
-        
       - name: Recieve package facts
         package_facts:
           manager: auto

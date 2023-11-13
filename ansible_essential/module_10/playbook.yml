@@ -1,0 +1,7 @@
+---
+  - name: Template reference playbook based on roles
+    become: yes
+    hosts: remote
+
+    roles:
+      - mywebrole
