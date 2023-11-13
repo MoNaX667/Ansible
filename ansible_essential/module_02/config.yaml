@@ -1,0 +1,26 @@
+---
+- hosts: webservers
+  become: yes
+  
+  tasks:
+    - name: Send a message for local
+      debug:
+        msg: "The task is triggered for local host"
+      tags: local_message
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+        cache_valid_time: 3600
+      tags: apache2
+
+    - name: Install NTP
+      apt:
+        name: ntp
+        state: present
+      tags: ntp
+
+    - name: Start NTP
+      service: name=ntp state=started enabled=yes
+      tags: ntp_start

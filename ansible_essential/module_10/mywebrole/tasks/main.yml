@@ -1,0 +1,20 @@
+---
+# tasks file for mywebrole
+- name: Test variable
+  debug:
+    var: myvar
+
+- name: Install apache2
+  apt:
+    name: apache2
+    state: present
+
+- name: Start httpd
+  service:
+    name: apache2
+    state: started
+
+- name: Create an index.html file using Jinja2 templates
+  template:
+    src: my_index_html.j2
+    dest: /var/www/html/index.html

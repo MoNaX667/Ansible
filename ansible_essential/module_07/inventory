@@ -1,0 +1,5 @@
+[local]
+local ansible_connection=local
+
+[remote]
+victim_vm ansible_host=137.117.150.14 ansible_connection=ssh

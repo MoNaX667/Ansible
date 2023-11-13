@@ -1,0 +1,8 @@
+local ansible_connection=local
+remote_vm ansible_connection=ssh ansible_ssh_host=137.117.150.14
+
+[local]
+local
+
+[webservers]
+remote_vm

@@ -1,0 +1,7 @@
+---
+  - name: My role testing playbook
+    become: yes
+    hosts: remote
+
+    roles:
+      - roles/vibely_role

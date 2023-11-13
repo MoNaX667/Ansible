@@ -1,0 +1,5 @@
+[localhosts]
+local_01 ansible_connection=local
+
+[remote]
+server_01 ansible_connection=ssh ansible_host=137.117.150.14

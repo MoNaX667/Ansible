@@ -1,0 +1,33 @@
+---
+  - name: My secret value test playbook
+    hosts: remote
+    become: yes
+    vars:
+      webserver_message: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          37373632613964386232623864303265356464663534366563316635373335623362393131366563
+          3936393339333562393765376631383936316566646232360a356234616664343536373735633362
+          39376238633830653437333333366663313834326536656265393064633032396434313133336562
+          3836326634396430620a353535616366643639646330653935613265653134613831626463316433
+          61386137356638336338323334646635623336346437386661333532363835663738
+    
+    tasks:
+      - name: "Tests availability"
+        ping:
+      - name: "Install apache"
+        apt:
+          package: apache2
+          state: present
+      - name: "Disable nginx"
+        service:
+          name: nginx
+          state: stopped
+      - name: "Start httpd"
+        service:
+          name: apache2
+          state: started
+
+      - name: "Create index.html using Jinja2"
+        template:
+          src: index_html.j2
+          dest: /var/www/html/index.html
